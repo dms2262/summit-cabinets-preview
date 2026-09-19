@@ -5,6 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Summit Cabinets | Custom Cabinetry — Built in TN, Shipped Nationwide</title>
 <meta name="description" content="Custom cabinetry for homeowners and contractors — built in East Tennessee, delivered nationwide. Over 15 years of craftsmanship. Free consultations.">
+<link rel="canonical" href="https://summitcabinetstn.com/">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Summit Cabinets | Custom Cabinetry — Built in TN, Shipped Nationwide">
+<meta property="og:description" content="Custom cabinetry for homeowners and contractors — built in East Tennessee, delivered nationwide. Over 15 years of craftsmanship. Free consultations.">
+<meta property="og:url" content="https://summitcabinetstn.com/">
+<meta property="og:site_name" content="Summit Cabinets">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Summit Cabinets | Custom Cabinetry — Built in TN, Shipped Nationwide">
+<meta name="twitter:description" content="Custom cabinetry for homeowners and contractors — built in East Tennessee, delivered nationwide. Over 15 years of craftsmanship. Free consultations.">
+<!-- NOTE: og:image / twitter:image intentionally omitted until real hosted image files exist (see SEO checklist) -->
+
+<!-- LocalBusiness structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Summit Cabinets",
+  "image": "https://summitcabinetstn.com/logo.png",
+  "url": "https://summitcabinetstn.com/",
+  "telephone": "+18653572864",
+  "email": "info@summitcabinetstn.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1750 Dutch Valley Rd",
+    "addressLocality": "Clinton",
+    "addressRegion": "TN",
+    "postalCode": "37716",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "State", "name": "Tennessee" },
+    { "@type": "Country", "name": "United States" }
+  ],
+  "priceRange": "$$",
+  "description": "Custom cabinetry for homeowners and contractors — built in East Tennessee, delivered nationwide."
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -106,6 +145,7 @@
     font-family:'Montserrat',Arial,sans-serif;font-size:12px;letter-spacing:.3em;
     text-transform:uppercase;color:var(--gold);margin-bottom:22px;
   }
+  .hero .eyebrow{color:#fff;opacity:.92;text-shadow:0 1px 3px rgba(0,0,0,.5);}
   .hero h1{
     font-size:clamp(46px,8vw,104px);
     line-height:.98;text-transform:uppercase;
@@ -124,6 +164,7 @@
   .callback .wrap{
     display:flex;flex-wrap:wrap;gap:20px;align-items:center;padding:26px 24px;
   }
+  .callback-simple{justify-content:center;padding:22px 24px;}
   .callback .label{
     font-family:'Montserrat',Arial,sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
     color:var(--dark);white-space:nowrap;font-weight:bold;
@@ -317,6 +358,12 @@
   }
   .cta input::placeholder{color:rgba(255,255,255,.55);}
   .cta input:focus{outline:1px solid var(--gold);}
+  .cta textarea{
+    font-family:'Montserrat',Arial,sans-serif;padding:15px 16px;border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.06);color:#fff;width:100%;font-size:14px;resize:vertical;
+  }
+  .cta textarea::placeholder{color:rgba(255,255,255,.55);}
+  .cta textarea:focus{outline:1px solid var(--gold);}
 
   /* footer */
   footer{background:var(--dark-2);color:rgba(255,255,255,.7);padding:60px 0 24px;}
@@ -366,7 +413,7 @@
   <div class="hero-inner">
     <div class="eyebrow sans">Custom Cabinet Shop &middot; Built in TN &middot; Shipped Nationwide</div>
     <h1>Built Around<br>Your Space</h1>
-    <p class="lead">Summit Cabinets designs and builds custom cabinetry for homeowners and contractors &mdash; based in East Tennessee, building and shipping projects nationwide &mdash; from everyday kitchens to standout built-ins that get noticed.</p>
+    <p class="lead">Summit Cabinets designs and builds custom cabinetry for homeowners and contractors &mdash; based in East Tennessee and building and shipping projects nationwide, from everyday kitchens to standout built-ins that get noticed.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn btn-gold sans">Schedule a Free Consultation</a>
       <a href="tel:8653572864" class="btn btn-light sans">Call (865) 357-2864</a>
@@ -375,16 +422,8 @@
 </section>
 
 <div class="callback">
-  <div class="wrap">
-    <span class="label">Get a Call Back</span>
-    <form id="callbackForm" action="https://formspree.io/f/xzezdzld" method="POST">
-      <input type="hidden" name="_subject" value="New Callback Request — Summit Cabinets Website">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="tel" name="phone" placeholder="Phone" required>
-      <input type="text" name="zip_code" placeholder="Zip Code">
-      <button type="submit" class="btn btn-dark sans">Let's Talk</button>
-    </form>
-    <p class="form-status" id="callbackStatus"></p>
+  <div class="wrap callback-simple">
+    <a href="#contact" class="btn btn-dark sans">Let's Talk</a>
   </div>
 </div>
 
@@ -399,7 +438,7 @@
       <div><div class="num">15+</div><div class="label">Years in Business</div></div>
       <div><div class="num">Lifetime</div><div class="label">Warranty</div></div>
       <div><div class="num">100%</div><div class="label">Custom Built</div></div>
-      <div><div class="num">Nationwide</div><div class="label">Build &amp; Ship</div></div>
+      <div><div class="num" style="font-size:32px;">East Tennessee</div><div class="label">Local Build &amp; Install, or Nationwide Build &amp; Ship</div></div>
     </div>
   </div>
 </section>
@@ -529,9 +568,12 @@
     <p>Tell us a little about the project and we'll set up a free consultation &mdash; no job's too small, no idea's too specific.</p>
     <form id="contactForm" action="https://formspree.io/f/xzezdzld" method="POST">
       <input type="hidden" name="_subject" value="New Project Inquiry — Summit Cabinets Website">
+      <input type="hidden" name="_cc" value="cgarrett@summitcabinetstn.com,dsmith@summitcabinetstn.com,ksmith@summitcabinetstn.com">
       <input type="text" name="name" placeholder="Name" required>
-      <input type="tel" name="phone" placeholder="Phone" required>
+      <input type="tel" name="phone" id="contactPhone" placeholder="Phone" required>
+      <input type="email" name="email" placeholder="Email" required>
       <input type="text" name="zip_code" placeholder="Zip Code">
+      <textarea name="message" placeholder="Tell us a little about your project" rows="4"></textarea>
       <button type="submit" class="btn btn-gold sans">Submit</button>
     </form>
     <p class="form-status" id="contactStatus"></p>
@@ -596,7 +638,20 @@
       }
     });
   }
-  wireForm('callbackForm', 'callbackStatus');
+  function formatPhoneInput(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', () => {
+      let digits = el.value.replace(/\D/g, '').slice(0, 10);
+      let formatted = digits;
+      if (digits.length > 6) formatted = `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}`;
+      else if (digits.length > 3) formatted = `(${digits.slice(0,3)}) ${digits.slice(3)}`;
+      else if (digits.length > 0) formatted = `(${digits}`;
+      el.value = formatted;
+    });
+  }
+  formatPhoneInput('contactPhone');
+
   wireForm('contactForm', 'contactStatus');
 
   const galleryGroups = [
