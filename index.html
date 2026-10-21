@@ -121,6 +121,7 @@
   nav.links a{
     color:#fff;font-family:'Montserrat',Arial,Helvetica,sans-serif;font-size:12px;
     letter-spacing:.14em;text-transform:uppercase;opacity:.9;
+    white-space:nowrap;
   }
   nav.links a:hover{opacity:1;border-bottom:1px solid var(--gold);}
   .nav-cta{display:flex;gap:12px;align-items:center;}
@@ -376,9 +377,22 @@
   }
 
   /* mobile */
-  @media(max-width:860px){
+  @media(max-width:1100px){
     nav.links{display:none;}
     .menu-btn{display:block;}
+    header.nav-open nav.links{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:18px;
+      position:absolute;
+      left:0;right:0;top:100%;
+      background:rgba(28,37,71,.97);
+      padding:8px 24px 22px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+  }
+  @media(max-width:860px){
     .stats-grid{grid-template-columns:repeat(2,1fr);}
     .service-grid{grid-template-columns:1fr;}
     .why .wrap{grid-template-columns:1fr;}
@@ -398,6 +412,7 @@
     <nav class="links">
       <a href="#about">About</a>
       <a href="#portfolio">Portfolio</a>
+      <a href="colors-and-door-styles.html">Colors and Door Styles</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
@@ -779,6 +794,26 @@
     if (dx > 50) prevImage();
     else if (dx < -50) nextImage();
   });
+
+  (function(){
+    var btn = document.querySelector('.menu-btn');
+    var header = document.querySelector('header');
+    if (!btn || !header) return;
+    btn.setAttribute('aria-label', 'Menu');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.addEventListener('click', function(){
+      var open = header.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.innerHTML = open ? '\u00d7' : '\u2630';
+    });
+    header.querySelectorAll('nav.links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        header.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '\u2630';
+      });
+    });
+  })();
 </script>
 </body>
 </html>
